@@ -5,7 +5,6 @@ const PORT = 3000
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-// const routes = ... routerların pathi gelecek 
 
 require('dotenv').config();
 app.use(express.json());
@@ -14,14 +13,14 @@ app.use(bodyParser.json());
 
 mongoose
     .connect(process.env.MONGO_URI, {
-        //useNewUrlParser: true,
-        //useUnifiedTopology: true,
     })
     .then(() => console.log('MongoDB Database Connected...'))
     .catch((err) => {
-        console.log(err);
+        console.error(err);
         process.exit(1);
     })
 
-//app.use() burada routerların pathi olacak
+const postRoutes = require('./routes/postRoutes');
+app.use('/api/posts', postRoutes);
+
 app.listen(process.env.PORT, () => console.log(`App listening at http://localhost:${process.env.PORT}`))
