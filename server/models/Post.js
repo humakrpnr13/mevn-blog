@@ -7,7 +7,9 @@ const postSchema = new Schema({
     tags: [String],
     category: String,
     createdAt: {type: Date, default: Date.now},
-    updatedAt: {type: Date, default: Date.now}
+    updatedAt: {type: Date, default: Date.now},
+    imageUrl: {type: String, trim: true},
+    imageAlt: {type: String, trim: true},
 });
 
 module.exports = mongoose.model('Post', postSchema);

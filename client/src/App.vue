@@ -1,28 +1,31 @@
 <template>
-  <div id="app" class="min-h-screen flex flex-col">
-    <!-- Header Section -->
-    <header class="bg-white shadow-md py-4">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <router-link to="/" class="text-3xl font-extrabold text-blue-600 hover:text-blue-700 transition-colors duration-300">
-          My Personal Blog
-        </router-link>
-        <nav>
-          <router-link to="/" class="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-md transition-colors duration-300">Home</router-link>
-        </nav>
+  <div class="flex min-h-screen bg-[#F8F5F1] text-[#333333] font-sans">
+    <!-- Sol Menü -->
+    <aside class="w-52 px-4 py-6 flex flex-col fixed h-full bg-[#F8F5F1] text-[#183928] z-10 border-r border-[#D2F059]">
+      <h1 class="text-xl font-bold mb-6">Hüma's Blog</h1>
+      <nav class="space-y-3 flex-grow">
+        <router-link to="/" class="block hover:text-[#546E18] transition text-lg font-medium">Home</router-link>
+        <router-link to="/about" class="block hover:text-[#546E18] transition text-lg font-medium">About Me</router-link>
+        <router-link to="/contact" class="block hover:text-[#546E18] transition text-lg font-medium">Contact</router-link>
+      </nav>
+      <div class="mt-auto pt-6 text-sm text-[#546E18]">
+        © 2025 Hüma Karapınar
       </div>
-    </header>
+    </aside>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow container mx-auto px-4 py-8">
-      <router-view/>
-    </main>
+    <!-- Sağ İçerik -->
+    <div class="ml-52 flex flex-col w-full">
+      <header class="w-full py-4 px-6 border-b border-[#D2F059] bg-[#F8F5F1] shadow-sm z-0">
+        <div class="flex justify-between items-center">
+          <h2 class="text-lg font-semibold text-[#183928]">🎧 Recommended Podcasts</h2>
+          <span class="text-sm text-[#546E18]">Updated: {{ currentDate }}</span>
+        </div>
+      </header>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-      <div class="container mx-auto px-4 text-center text-sm">
-        &copy; {{ currentYear }} My Personal Blog. All rights reserved.
-      </div>
-    </footer>
+      <main class="flex-grow px-6 py-8 space-y-6 bg-[#F8F5F1]">
+        <router-view />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -31,13 +34,16 @@ export default {
   name: 'App',
   data() {
     return {
-      currentYear: new Date().getFullYear()
+      currentDate: new Date().toLocaleDateString(),
     };
   }
 };
 </script>
 
 <style>
-/* Global styles, including font import */
-/* Tailwind CSS is loaded via CDN in public/index.html */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  overflow-y: scroll;
+  background-color: #F8F5F1;
+}
 </style>

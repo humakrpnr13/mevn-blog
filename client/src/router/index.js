@@ -1,19 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import PostList from '../components/PostList.vue';
-import PostDetail from '../views/PostDetail.vue';
+import HomeView from '../views/HomeView.vue'; 
+import AboutView from '../views/AboutView.vue';
+import ContactView from '../views/ContactView.vue'; 
+import PostDetailView from '../views/PostDetailView.vue'; 
 
 const routes = [
-  {
-    path: '/',
-    name: 'PostList',
-    component: PostList
-  },
-  {
-    path: '/posts/:id', // Route for a single post
-    name: 'PostDetail',
-    component: PostDetail,
-    props: true // Pass route params as props to the component
-  }
+  { path: '/', name: 'Home', component: HomeView },
+  { path: '/about', name: 'About', component: AboutView },
+  { path: '/contact', name: 'Contact', component: ContactView },
+  { path: '/posts/:id', name: 'PostDetail', component: PostDetailView, props: true }, 
 ];
 
 const router = createRouter({
