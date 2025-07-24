@@ -21,6 +21,9 @@ mongoose
     })
 
 const postRoutes = require('./routes/postRoutes');
+const contact = require('./routes/contact');
+
 app.use('/api/posts', postRoutes);
+app.use('/api/contact', contact);
 
 app.listen(process.env.PORT, () => console.log(`App listening at http://localhost:${process.env.PORT}`))
