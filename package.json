@@ -1,8 +1,8 @@
 {
-  "name": "blog-project-root",  
+  "name": "blog-project-root",
   "version": "1.0.0",
   "description": "MEVN Stack Blog Application",
-  "main": "index.js", 
+  "main": "index.js",
   "scripts": {
     "server": "npm run dev --prefix server",
     "client": "npm run serve --prefix client",
@@ -12,6 +12,9 @@
   "author": "Zeynep Hüma Karapinar",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^9.2.0" 
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
   }
 }

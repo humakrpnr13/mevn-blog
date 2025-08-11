@@ -9,7 +9,7 @@
         <router-link to="/contact" class="block hover:text-[#546E18] transition text-lg font-medium">Contact</router-link>
       </nav>
       <div class="mt-auto pt-6 text-sm text-[#546E18]">
-        © 2025 Z. Hüma Karapınar
+        © 2025 Zeynep Hüma Karapınar
       </div>
     </aside>
 
@@ -27,12 +27,20 @@
         <router-view />
       </main>
     </div>
+
+    <Chatbot />
+
   </div>
 </template>
 
 <script>
+import Chatbot from './views/ChatBotView.vue'; 
+
 export default {
   name: 'App',
+  components: {
+    Chatbot, 
+  },
   data() {
     return {
       currentDate: new Date().toLocaleDateString(),

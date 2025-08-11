@@ -4,6 +4,8 @@ import AboutView from '../views/AboutView.vue';
 import ContactView from '../views/ContactView.vue'; 
 import PostDetailView from '../views/PostDetailView.vue'; 
 import PodcastView from '../views/PodcastView.vue';
+import ChatBotView from '../views/ChatBotView.vue';
+
 
 const routes = [
   { path: '/', name: 'Home', component: HomeView },
@@ -11,6 +13,7 @@ const routes = [
   { path: '/contact', name: 'Contact', component: ContactView },
   { path: '/posts/:id', name: 'PostDetail', component: PostDetailView, props: true }, 
   {path: '/podcasts', name: 'Podcasts', component: PodcastView},
+  {path: '/chatbot', name: 'ChatBot', component: ChatBotView},
 ];
 
 const router = createRouter({

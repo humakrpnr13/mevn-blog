@@ -22,8 +22,10 @@ mongoose
 
 const postRoutes = require('./routes/postRoutes');
 const contact = require('./routes/contact');
+const chatBotRoutes = require('./routes/chatBotRoutes');
 
 app.use('/api/posts', postRoutes);
 app.use('/api/contact', contact);
+app.use('/api/chatbot', chatBotRoutes);
 
 app.listen(process.env.PORT, () => console.log(`App listening at http://localhost:${process.env.PORT}`))
